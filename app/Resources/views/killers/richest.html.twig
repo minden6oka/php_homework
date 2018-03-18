@@ -1,0 +1,12 @@
+{% extends 'killers/list.html.twig' %}
+
+{% block links %}
+    <a href="{{ path('killers') }}">Back</a>
+{% endblock %}
+
+{% block content %}
+    <header>Rankings</header>
+    {% for key in Ranks|keys %}
+        <p>{{ loop.index }} place earned {{ key }}: {{ Ranks[key] }}</p>
+    {% endfor %}
+{% endblock %}

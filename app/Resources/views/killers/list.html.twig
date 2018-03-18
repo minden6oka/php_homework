@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Assassins{% endblock %}
+
+{% block body %}
+    {% block links %}
+        <a href="{{ path('killersmax') }}">Max values</a><br/>
+        <a href="{{ path('killersmin') }}">Min values</a><br/>
+        <a href="{{ path('killersaverages') }}">Avg values</a><br/>
+        <a href="{{ path('killersrichest') }}">Killer ranking</a><br/>
+        <a href="{{ path('killerslatest') }}">Latest killers</a><br/>
+        <a href="{{ path('killersextend') }}">Add 10 random killer</a>
+    {% endblock %}
+    <table>
+        <tr>
+            <td style="border-right: 4px solid black">
+                {% for assassin in Assassins %}
+                    <div style="padding-bottom: 10px">
+                        <table border="2">
+                            {% for prop in Properties %}
+                                {% block colorize %}
+                                    <tr>
+                                {% endblock %}
+
+                                {% if assassin[prop] is defined and assassin[prop] is iterable %}
+                                    <td>{{ prop }}</td><td>Values</td>
+                                    {% for value in assassin[prop] %}
+                                        {% block colorizeArray %}
+                                        <tr>
+                                        {% endblock %}
+                                            <td style="background-color: black"></td>
+                                            <td>
+                                                {{ value }}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                {% else %}
+                                    <td>{{ prop }}</td><td>{{ assassin[prop]|default('UNKNOWN') }}</td>
+                                {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                {% endfor %}
+            </td>
+            <td style="vertical-align: top">
+                {% block content %}{% endblock %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

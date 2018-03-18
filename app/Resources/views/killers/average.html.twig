@@ -1,0 +1,11 @@
+{% extends 'killers/list.html.twig' %}
+
+{% block links %}
+    <a href="{{ path('killers') }}">Back</a>
+{% endblock %}
+
+{% block content %}
+    {% for prop in Properties %}
+        <p>Average of {{ prop|upper }} is {{ Averages[prop]['value'] / Averages[prop]['Count']}}</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'killers/list.html.twig' %}
+
+{% block links %}
+    <a href="{{ path('killers') }}">Back</a>
+{% endblock %}
+
+{% block colorize %}
+    {% block colorizeArray %}
+        {% if assassin[prop] is defined and (maxValues[prop]["Type"] == "a" or maxValues[prop]["Type"] == "s") and assassin[prop]|length == maxValues[prop]["Value"] %}
+    <tr bgcolor="#{{ maxValues[prop]['Color'] }}">
+{% elseif assassin[prop] is defined and maxValues[prop]["Type"] == "i" and assassin[prop] == maxValues[prop]["Value"] %}
+<tr bgcolor="#{{ maxValues[prop]['Color'] }}">
+{% elseif assassin[prop] is defined and maxValues[prop]["Type"] == "d" and assassin[prop] == maxValues[prop]["Format"] %}
+<tr bgcolor="#{{ maxValues[prop]['Color'] }}">
+{% else %}
+<tr>
+    {% endif %}
+    {% endblock %}
+    {% endblock %}
+
+    {% block content %}
+    <table border="2">
+        {% for prop in Properties %}
+            <tr bgcolor="#{{ maxValues[prop]['Color'] }}">
+                <td>
+                    {% if maxValues[prop] is defined %}
+                        {% if maxValues[prop]["Type"] == "a" %}
+                            The smallest array of {{ prop|upper }} has {{ maxValues[prop]["Value"] }} elements
+                        {% elseif maxValues[prop]["Type"] == "i" %}
+                            The smallest number of {{ prop|upper }} is {{ maxValues[prop]["Value"] }}
+                        {% elseif maxValues[prop]["Type"] == "d" %}
+                            The earliest date of {{ prop|upper }} is {{ maxValues[prop]["Format"] }}
+                        {% else %}
+                            The shortest text length of {{ prop|upper }} is {{ maxValues[prop]["Value"] }}
+                        {% endif %}
+                    {% else %}
+                        The extrema of {{ prop|upper }} is UNKNOWN
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

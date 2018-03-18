@@ -1,0 +1,80 @@
+Name: Killer Bee
+Weapons:: Swords
+Weapons:: Needdles
+Weapons:: Rhymes
+Age: 22
+Victims:: The President
+Victims:: Bypassers
+LastAssassination: 2017-11-11
+AveragePrice: 12500
+-
+
+Weapons:: Hands
+Weapons:: Magic arts
+Weapons:: Math
+Age:17
+LastAssassination: 2010-04-15
+Victims:: You know who
+Name: Harry Pottery
+-
+
+Name: Kyle Reese
+Weapons:: Guns
+Weapons:: Explosives
+Victims:: Sarah Connor
+Victims:: Terminators
+Victims:: Skynet
+LastAssassination: 2092-12-24
+AveragePrice: 1000
+-
+
+Victims:: Genji
+Weapons:: Bow
+Name: Hanzo
+Age:42
+-
+
+Name: Mighty eagle
+Weapons:: Claws
+Weapons:: Wings
+Age:40
+AveragePrice: 666
+-
+
+Age:999
+Victims:: Everyone
+AveragePrice: 0
+Name: One above all
+-
+
+Name: Chowder
+Weapons:: Mouth
+Weapons:: Hands
+Weapons:: Low Intelligence
+Victims:: Food, but all of them
+Age: 7
+-
+
+Victims:: The Future
+Age: 24
+Name: Marty McFly
+Weapons:: The Professor
+Weapons:: Time Machine
+-
+
+Name: Chuck Norris
+Age: 42
+Weapons:: Everything
+Victims:: One above all
+Victims:: Everyone else once more
+LastAssassination: 2018-03-15
+-
+
+Name: Black Widow
+Weapons:: Sniper rifle
+Weapons:: Poison
+Victims:: Omnics
+LastAssassination: 2018-07-14
+AveragePrice: 100000
+-
+
